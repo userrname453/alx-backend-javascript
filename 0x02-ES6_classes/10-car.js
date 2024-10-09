@@ -3,7 +3,6 @@ export default class Car {
     this._brand = brand;
     this._motor = motor;
     this._color = color;
-    console.log(Symbol);
   }
 
   cloneCar() {
