@@ -4,17 +4,30 @@ interface Teacher {
     fullTimeEmployee: boolean;
     location: string;
     yearsOfExperience?: number;
-    [key: string]: any; // Allows any additional properties
+    [key: string]: any; 
   }
   
-  // Example of creating a Teacher object
+  interface Directors extends Teacher {
+    numberOfReports: number;
+  }
+  
   const teacher3: Teacher = {
     firstName: 'John',
     lastName: 'Doe',
     fullTimeEmployee: false,
     location: 'London',
-    contract: false, // Additional property
+    contract: false,
   };
   
   console.log(teacher3);
+  
+  const director1: Directors = {
+    firstName: 'John',
+    lastName: 'Doe',
+    location: 'London',
+    fullTimeEmployee: true,
+    numberOfReports: 17,
+  };
+  
+  console.log(director1);
   
