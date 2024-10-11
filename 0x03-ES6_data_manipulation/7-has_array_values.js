@@ -1,4 +1,2 @@
-export default function hasValuesFromArray(set, array) {
-  const arraySet = new Set(array);
-  return arraySet.isSubsetOf(set);
-}
+const hasValuesFromArray = (set, array) => array.every((value) => set.has(value));
+export default hasValuesFromArray;
