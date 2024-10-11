@@ -1,18 +1,18 @@
 namespace Subjects {
     export interface Teacher {
-        experienceTeachingReact?: number;
+        experienceTeachingJava?: number; // Declaration merging
     }
 
-    export class React extends Subjects.Subject {
+    export class Java extends Subject {
         getRequirements(): string {
-            return 'Here is the list of requirements for React';
+            return 'Here is the list of requirements for Java';
         }
 
         getAvailableTeacher(): string {
-            if (!this.teacher || this.teacher.experienceTeachingReact <= 0) {
-                return 'No available teacher';
+            if (this.teacher?.experienceTeachingJava && this.teacher.experienceTeachingJava > 0) {
+                return `Available Teacher: ${this.teacher.firstName}`;
             }
-            return `Available Teacher: ${this.teacher.firstName}`;
+            return 'No available teacher';
         }
     }
 }

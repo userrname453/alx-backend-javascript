@@ -1,18 +1,18 @@
 namespace Subjects {
     export interface Teacher {
-        experienceTeachingC?: number;
+        experienceTeachingC?: number; // Declaration merging
     }
 
-    export class Cpp extends Subjects.Subject {
+    export class Cpp extends Subject {
         getRequirements(): string {
             return 'Here is the list of requirements for Cpp';
         }
 
         getAvailableTeacher(): string {
-            if (!this.teacher || this.teacher.experienceTeachingC <= 0) {
-                return 'No available teacher';
+            if (this.teacher?.experienceTeachingC && this.teacher.experienceTeachingC > 0) {
+                return `Available Teacher: ${this.teacher.firstName}`;
             }
-            return `Available Teacher: ${this.teacher.firstName}`;
+            return 'No available teacher';
         }
     }
 }
